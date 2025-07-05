@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   backend:
-  image: kanthima005/backend:v1
-  ports:
-    - "3000:3000"
-  restart: always
+    image: kanthima005/backend:v1
+    ports:
+      - "3000:3000"
+    restart: always
