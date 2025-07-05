@@ -74,8 +74,8 @@ pipeline {
                 // sh 'docker build -t nginx-node-test:latest .'
                 sh '''
                     docker build \
-                    --cache-from=nginx-node-test:latest \
-                    -t nginx-node-test:latest .
+                    --cache-from=backend:v1 \
+                    -t backend:v1 .
                 '''
             }
         }
@@ -85,8 +85,8 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'docker-cred', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh '''
                         echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-                        docker tag nginx-node-test:latest kanthima005/nginx-node-test:latest
-                        docker push kanthima005/nginx-node-test:latest
+                        docker tag backend:v1 kanthima005/backend:v1
+                        docker push kanthima005/backend:v1
                         docker logout
                     '''
                 }
