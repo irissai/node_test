@@ -1,0 +1,25 @@
+image: docker:stable
+
+stages:
+  - build
+  - deploy
+
+#Install dependencies
+install_dependencies:
+  stage: build
+  tags:
+    - training
+  script:
+    - echo "Installing dependencies"
+    - npm install
+
+#Deploy application
+deploy:
+  stage: deploy
+  tags:
+    - training
+  script:
+    - echo "Deploying application"
+    - npm run Deploying
+  only:
+    - master

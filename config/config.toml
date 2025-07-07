@@ -1,0 +1,20 @@
+concurrent = 1
+check_interval = 0
+shutdown_timeout = 0
+
+[session_server]
+  session_timeout = 1800
+
+[[runners]]
+  name = "46177402e9d6"
+  url = "https://gitlab.com"
+  id = 48034195
+  token = "glrtr-fvo4QxiIr0Jnl-l8vhfYr286MQpwOjE2aTdhNwp0OjMQ.01.181oiojkz"
+  token_obtained_at = 2025-07-07T03:07:50Z
+  token_expires_at = 0001-01-01T00:00:00Z
+  executor = "shell"
+  [runners.cache]
+    MaxUploadedArchiveSize = 0
+    [runners.cache.s3]
+    [runners.cache.gcs]
+    [runners.cache.azure]
